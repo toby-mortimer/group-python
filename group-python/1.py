@@ -1,12 +1,12 @@
 from db import DB
 from PeopleTable import People
 
-database = People('test.db')
-
+database = DB('test.db')
 conn = database.Conn
+people = People(conn)
 
 conn.execute('SELECT * FROM People')
-c = conn.cursor()
-data = c.fetchall()
+cursor = conn.cursor()
+data = cursor.fetchall()
 
 print(data)
