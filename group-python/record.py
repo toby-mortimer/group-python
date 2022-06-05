@@ -9,7 +9,10 @@ class Records:
         self.conn = conn
 
     def create_record(table, conn):
-        query = f"INSERT INTO '{table}' ('FirstName', 'Surname') VALUES (?,?)"
         cursor = conn.cursor()
-        cursor.execute(query, data)
+        query = """ INSERT INTO table 
+                ('Id' 'FirstName', 'Surname' 'Age') 
+                VALUES 
+                (1, 'Toby' , 'Mortimer' , 16 ) """
+        cursor.execute(query)
         conn.commit()

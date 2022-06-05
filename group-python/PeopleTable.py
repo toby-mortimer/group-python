@@ -10,9 +10,9 @@ class People:
         self.create_table()
 
     def create_table(self):
-        query = """ CREATE TABLE IF NOT EXISTS "People" (
-                "Id"	INTEGER NOT NULL PRIMARY KEY AUTOINCREMENT UNIQUE,
-                "FirstName"	TEXT NOT NULL,
-                "Surname"	TEXT NOT NULL
-                ); """
+        query = """ 
+                "Id" INTEGER NOT NULL PRIMARY KEY AUTOINCREMENT UNIQUE,
+	            "FirstName"	TEXT NOT NULL,
+	            "Surname" TEXT NOT NULL,
+	            "Age" INTEGER NOT NULL """
         self.cursor.execute(query)
