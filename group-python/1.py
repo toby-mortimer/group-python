@@ -5,3 +5,4 @@ from record import Records
 database = DB('test.db')
 conn = database.Conn
 people = People(conn)
+cursor = conn.cursor

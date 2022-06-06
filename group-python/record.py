@@ -9,10 +9,10 @@ class Records:
         self.conn = conn
 
     def create_record(table, conn):
-        cursor = conn.cursor()
-        query = """ INSERT INTO table 
-                ('Id' 'FirstName', 'Surname' 'Age') 
-                VALUES 
-                (1, 'Toby' , 'Mortimer' , 16 ) """
-        cursor.execute(query)
+        conn = sqlite3.connect('test.db')
+        cursor = conn.cursor
+
+        cursor.execute(
+            "INSERT INTO test VALUES (2, 'firstName', 'lastName', 16)")
+
         conn.commit()
